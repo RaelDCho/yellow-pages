@@ -1,0 +1,30 @@
+{
+  "persons": [
+    {
+      "name": "Arto Hellas",
+      "number": "040-123456",
+      "id": "1"
+    },
+    {
+      "name": "Ada Lovelace",
+      "number": "39-44-5323523",
+      "id": "2"
+    },
+    {
+      "name": "Dan Abramov",
+      "number": "12-43-234345",
+      "id": "3"
+    },
+    {
+      "name": "Jaime Lannister",
+      "number": "34573408",
+      "id": "sIZzcTJ25gM"
+    },
+    {
+      "name": "Tyrion Lannister",
+      "number": "35034545789",
+      "id": "KktT7e5hK9A"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
