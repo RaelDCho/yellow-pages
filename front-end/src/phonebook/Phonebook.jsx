@@ -51,13 +51,15 @@ const Phonebook = () => {
         // check if name exists in the list already
         let person = persons.find(p => p.name === newName);
 
+        // Update if person exists already
         if (person) {
             updatePerson(person, newPerson);
         } else { // create if name does not exist
             console.log(`persons length: ${persons.length}`);
             personService.create(newPerson).then(response => {
                 // update useState array of persons objects
-                setPersons(persons.concat(response.data));
+                setPersons(persons.concat(newPerson));
+                // persons.map(p => console.log(`${p.name}, ${p.number}`));
                 // update error message
                 setMessage(`${newPerson.name} has been added.`);
                 setSuccess(true);
@@ -93,7 +95,7 @@ const Phonebook = () => {
                 setSuccess(false);
             });
         } else {
-            alert(`${person.name} already exists in the list!`);
+            setMessage(`${person.name} already exists in the list!`);
         }
     }
 

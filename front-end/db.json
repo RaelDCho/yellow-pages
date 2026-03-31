@@ -24,6 +24,11 @@
       "name": "Tyrion Lannister",
       "number": "35034545789",
       "id": "KktT7e5hK9A"
+    },
+    {
+      "name": "David Lee",
+      "number": "2342344",
+      "id": "yBLidlY8Ry4"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

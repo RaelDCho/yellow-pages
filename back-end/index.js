@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 
 app.use(express.json());
+app.use(express.static('dist'));
 app.use(morgan('tiny'));
 app.use(cors());
 
@@ -106,6 +107,7 @@ app.post('/api/persons', (request, response) => {
         name: body.name,
         number: body.number
     }
+    console.log(`back-end person: ${person}`);
 
     if (person.id === -1) {
         return response.status(404).json({
@@ -128,6 +130,9 @@ app.post('/api/persons', (request, response) => {
     }
 
     persons = persons.concat(person);
+    console.log(`back-end persons: ${persons}`);
+
+    // persons.map(p => console.log(`${p.name}, ${p.number}`));
 
     response.json(persons);
 });
