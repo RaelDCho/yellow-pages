@@ -55,7 +55,6 @@ const Phonebook = () => {
         if (person) {
             updatePerson(person, newPerson);
         } else { // create if name does not exist
-            console.log(`persons length: ${persons.length}`);
             personService.create(newPerson).then(response => {
                 // update useState array of persons objects
                 setPersons(persons.concat(newPerson));

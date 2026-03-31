@@ -7,7 +7,6 @@ const Notification = ({message, success}) => {
     return (
         <div className={success ? "Success" : "Error"}>
             {message}
-            {console.log(`success in notification: ${success}`)}
         </div>
     )
 }

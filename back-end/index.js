@@ -107,7 +107,6 @@ app.post('/api/persons', (request, response) => {
         name: body.name,
         number: body.number
     }
-    console.log(`back-end person: ${person}`);
 
     if (person.id === -1) {
         return response.status(404).json({
@@ -130,9 +129,6 @@ app.post('/api/persons', (request, response) => {
     }
 
     persons = persons.concat(person);
-    console.log(`back-end persons: ${persons}`);
-
-    // persons.map(p => console.log(`${p.name}, ${p.number}`));
 
     response.json(persons);
 });
