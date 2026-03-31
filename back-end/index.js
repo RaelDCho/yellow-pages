@@ -35,7 +35,7 @@ let persons = [
       "name": "Mary Poppendieck", 
       "number": "39-23-6423122"
     }
-]
+];
 
 // map through an array if see if unique id exists in the array, if not add it to array, if yes, generate a new number
 const generateId = () => {
@@ -58,21 +58,21 @@ const generateId = () => {
             return -1;
         }
 
-    } while (exists)
+    } while (exists);
 }
 
 app.get('/', (request, response) => {
     response.send('<h1>Hello World!</h1>');
-})
+});
 
 app.get('/info', (request, response) => {
     response.send(`<h2>Phonebook has info for ${persons.length} people</h2>\n
         <p>${Date().toLocaleString()}</p>`);
-})
+});
 
 app.get('/api/persons', (request, response) => {
     response.send(persons);
-})
+});
 
 app.get('/api/persons/:id', (request, response) => {
     const id = request.params.id;
@@ -83,14 +83,14 @@ app.get('/api/persons/:id', (request, response) => {
     } else {
         response.status(404).end();
     }
-})
+});
 
 app.delete('/api/persons/:id', (request, response) => {
     const id = request.params.id;
     persons = persons.filter(p => p.id !== id);
 
     response.status(204).end();
-})
+});
 
 app.post('/api/persons', (request, response) => {
     const body = request.body;
@@ -130,9 +130,9 @@ app.post('/api/persons', (request, response) => {
     persons = persons.concat(person);
 
     response.json(persons);
-})
+});
 
-const PORT = 3001
+const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
-})
+});
