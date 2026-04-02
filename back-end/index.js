@@ -4,6 +4,8 @@ const app = express();
 const morgan = require('morgan');
 const cors = require('cors');
 
+const Person = require('./models/person');
+
 app.use(express.json());
 app.use(express.static('dist'));
 app.use(morgan('tiny'));
@@ -72,7 +74,9 @@ app.get('/info', (request, response) => {
 });
 
 app.get('/api/persons', (request, response) => {
-    response.send(persons);
+    Person.find({}).then(person => {
+        response.json(person);
+    })
 });
 
 app.get('/api/persons/:id', (request, response) => {
