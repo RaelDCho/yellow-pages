@@ -1,0 +1,7 @@
+PUT  http://localhost:3001/api/persons/69cf4a9eb5a8c3a5bf409097
+Content-Type: application/json
+
+{
+    "name": "Megumi Fushiguro",
+    "number": "12-12-1231234"
+} 

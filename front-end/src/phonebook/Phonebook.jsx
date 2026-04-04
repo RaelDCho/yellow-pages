@@ -103,7 +103,7 @@ const Phonebook = () => {
      */
     const deletePerson = id => {
         const removePerson = persons.find(p => p.id === id);
-
+        
         if (removePerson) {
             personService.remove(id).then(response => {
                 console.log(`Removed ${id}: ${response}`);

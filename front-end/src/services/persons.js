@@ -1,10 +1,11 @@
 import axios from 'axios';
 
-const baseUrl = '/api/persons/';
+const baseUrl = '/api/persons';
 
 const getAll = () => {
     // const request =  axios.get(baseUrl);
     // return request.then(response => response.data);
+    // console.log(`${baseUrl}`);
     return axios.get(baseUrl);
 }
 
@@ -18,6 +19,7 @@ const update = (id, newObject) => {
 }
 
 const remove = id => {
+    // console.log(`${baseUrl}/${id}`);
     return axios.delete(`${baseUrl}/${id}`);
 }
 
