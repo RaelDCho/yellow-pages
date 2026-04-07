@@ -17,7 +17,7 @@ const Phonebook = () => {
             console.log('promise fulfilled');
             setPersons(response.data);
         });
-    }, []);
+    }, [persons.length]);
 
     const [newName, setNewName] = useState('');
     const handleNameChange = event => setNewName(event.target.value);
@@ -66,7 +66,8 @@ const Phonebook = () => {
                 setNewName('');
                 setNewNumber('');
             }).catch(error => {
-                setMessage(`Something wrong with adding`);
+                console.log(error.response.data.error);
+                setMessage(error.response.data.error);
                 setSuccess(false);
             })
         }
