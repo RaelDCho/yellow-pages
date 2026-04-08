@@ -12,10 +12,6 @@ morgan.token('body', (request, response) => {
   return JSON.stringify(request.body)
 })
 
-// personsRouter.get('/', (request, response) => {
-//   response.send('<h1>Hello World!</h1>')
-// })
-
 personsRouter.get('/info', (request, response) => {
   Person.find({}).then(result => {
     response.send(`<h2>Phonebook has info for ${result.length} people</h2>\n
