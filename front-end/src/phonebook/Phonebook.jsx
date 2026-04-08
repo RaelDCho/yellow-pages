@@ -10,7 +10,7 @@ import Notification from "./Notification";
 
 const Phonebook = () => {
   const [persons, setPersons] = useState([]);
-  
+
   useEffect(() => {
     console.log('effect');
     personService.getAll().then(response => {
@@ -18,26 +18,26 @@ const Phonebook = () => {
       setPersons(response.data);
     });
   }, [persons.length]);
-  
+
   const [newName, setNewName] = useState('');
   const handleNameChange = event => setNewName(event.target.value);
-  
+
   const [newNumber, setNewNumber] = useState('');
   const handleNumberChange = event => setNewNumber(event.target.value);
-  
+
   const [filter, setFilter] = useState('');
   const handleFilter = event => setFilter(event.target.value);
-  
+
   const [message, setMessage] = useState('');
   const [success, setSuccess] = useState(true);
-  
+
   /*
-  Function created for adding people
-  - prevent the form from submitting on click
-  - create a new 'person' object to add to the list
-  - check if person's name already exists in the list
-  - add and reset user input if not
-  - alert, if is
+    Function created for adding people
+    - prevent the form from submitting on click
+    - create a new 'person' object to add to the list
+    - check if person's name already exists in the list
+    - add and reset user input if not
+    - alert, if is
   */
   const addNewPerson = event => {
     event.preventDefault();
@@ -107,22 +107,22 @@ const Phonebook = () => {
     
     if (removePerson) {
       personService.remove(id).then(response => {
-        console.log(`Removed ${id}: ${response}`);
-        setPersons(persons.filter(p => p.id !== id));
-        setMessage(`${removePerson.name} has been deleted.`);
-        setSuccess(true);
+        console.log(`Removed ${id}: ${response}`)
+        setPersons(persons.filter(p => p.id !== id))
+        setMessage(`${removePerson.name} has been deleted.`)
+        setSuccess(true)
       }).catch(error => {
-        setMessage(`Something wrong with deleting`);
-        setSuccess(false);
-      });
+        setMessage(`Something wrong with deleting`)
+        setSuccess(false)
+      })
       
-      setTimeout(() => {setMessage(null)}, 5000);
+      setTimeout(() => {setMessage(null)}, 5000)
     }
   }
   
   return (
     <>
-    <div>
+    <div className='phonebook'>
       <Filter handleFilter={handleFilter} />
       <PersonForm newName={newName} newNumber={newNumber} addNewPerson={addNewPerson} 
                   handleNameChange={handleNameChange} handleNumberChange={handleNumberChange} />
@@ -133,4 +133,4 @@ const Phonebook = () => {
   )
 }
 
-export default Phonebook;
+export default Phonebook

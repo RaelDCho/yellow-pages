@@ -1,23 +1,16 @@
 import './App.css'
 
+import Header from './decoration/Header.jsx'
 import Phonebook from './phonebook/Phonebook.jsx'
-
-const Footer = () => {
-
-  return(
-    <>
-      <div>
-        App created by <a href='https://github.com/RaelDCho'>RaelDCho</a>
-      </div>
-    </>
-  )
-}
+import Footer from './decoration/Footer.jsx'
 
 function App() {
 
   return (
     <>
+      <Header />
       <Phonebook />
+      <Footer />
     </>
   )
 }

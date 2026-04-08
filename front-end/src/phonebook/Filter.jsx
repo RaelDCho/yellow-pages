@@ -1,12 +1,11 @@
 
 
-const Filter = ({handleFilter}) => {
+const Filter = ({ handleFilter }) => {
   
   return (
-    <>
-    <h2>Phonebook</h2>
-    filter: <input onChange={handleFilter}/>
-    </>
+    <div className='filter'>
+      <input onChange={handleFilter} placeholder='search'/>
+    </div>
   )
 }
 
