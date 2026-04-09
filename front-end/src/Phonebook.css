@@ -14,9 +14,7 @@
 }
 
 .contact-input {
-  max-width: 500px;
-  /* border: 1px solid grey; */
-  border-right: 1px solid rgb(152, 152, 152);
+  width: 100%;
 }
 
 .contact-input input {
@@ -25,7 +23,8 @@
   outline: none;
   padding: 12px 18px;
   font-size: 16px;
-  border-radius: 50px;
+  border-right: 1px solid rgb(152, 152, 152);
+  width: 100%;
 }
 
 .submit-button button {
@@ -38,14 +37,21 @@
 }
 
 .input {
-  /* margin: 10px; */
+  width: 100%;
+  border: none;
+  border-right: 1px solid rgb(152, 152, 152);
+  outline: none;
+  padding: 12px 18px;
+  font-size: 16px;
 }
 
 .bar {
   border: 1px solid rgb(152, 152, 152);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  max-width: 500px;
-  padding: 12px 18px;
+  /* max-width: 500px; */
+  width: 500px;
+  /* padding: 12px 18px; */
+  padding: 5px;
   display: flex;
   border-radius: 5px;
   padding: 0px;
@@ -64,6 +70,10 @@
 
 .bar button:hover {
   background: #e5e5e5;
+}
+
+.bar button:active {
+  background: #777777;
 }
 
 .form {
